@@ -100,7 +100,7 @@ public class Prog1050a {
         for (var record : records)
             if (record.fields[2].equalsIgnoreCase(itemType) &&
                     record.fields[5].endsWith("2012"))
-                lostProfit += Double.parseDouble(record.fields[13]);
+                lostProfit += record.getProfit();
         return lostProfit;
 
     }
@@ -132,7 +132,7 @@ public class Prog1050a {
         double highestProfit = 0;
         for (var record : records) {
             if (record.fields[fIndex].equalsIgnoreCase(itemType)) {
-                double profit = Double.parseDouble(record.fields[13]);
+                double profit = record.getProfit();
                 if (profit > highestProfit) {
                     highestProfit = profit;
                     highestCountry = record.fields[1];
