@@ -1,9 +1,7 @@
 package DataStructures;
 
 public class Deque<T extends Comparable<T>> extends Queue<T> {
-    public Deque() {
-        super();
-    }
+    public Deque() { super(); }
 
     public void enqueueFront(T element) {
         if (size == capacity)
@@ -22,7 +20,5 @@ public class Deque<T extends Comparable<T>> extends Queue<T> {
         return element;
     }
 
-    public T peekFront() {
-        return queue[front];
-    }
+    public T peekFront() { return queue[front]; }
 }
