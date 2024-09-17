@@ -2,7 +2,7 @@ package Algorithms;
 
 @SuppressWarnings({"unused"})
 public class SearchAlgorithms {
-    public static<T extends Comparable<T>> int linearSearch(T[] arr, T target) {
+    public static <T extends Comparable<T>> int linearSearch(T[] arr, T target) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].compareTo(target) == 0) {
                 return i;
@@ -11,7 +11,7 @@ public class SearchAlgorithms {
         return -1;
     }
 
-    public static<T extends Comparable<T>> int binarySearch(T[] arr, T target) {
+    public static <T extends Comparable<T>> int binarySearch(T[] arr, T target) {
         int low = 0;
         int high = arr.length - 1;
         while (low <= high) {
@@ -26,7 +26,7 @@ public class SearchAlgorithms {
         return -1;
     }
 
-    public static<T extends Comparable<T>> int binarySearchRecursive(T[] arr, T target, int low, int high) {
+    public static <T extends Comparable<T>> int binarySearchRecursive(T[] arr, T target, int low, int high) {
         if (low > high) return -1;
         int mid = (low + high) / 2;
         if (arr[mid].compareTo(target) == 0)
