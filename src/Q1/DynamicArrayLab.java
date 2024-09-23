@@ -23,5 +23,6 @@ public class DynamicArrayLab {
         System.out.println("Dynamic Array sort: " + (end-start)/1e6 + " ms");
 
         // TODO: check against ArrayList
+        // sort with "arrayList.sort(null);
     }
 }
