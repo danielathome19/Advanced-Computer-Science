@@ -39,7 +39,7 @@ public class DynamicArray<T extends Comparable<T>> implements Iterable<T>, Compa
     public int indexOf(T element) { return SearchAlgorithms.binarySearch(array, element); }
     public boolean contains(T element) { return this.indexOf(element) != -1; }
     public void print() { System.out.println(Arrays.toString(Arrays.copyOf(array, size))); }
-    public void sort() { SortingAlgorithms.quickSort(array); }
+    public void sort() { SortingAlgorithms.insertionSort(array); }  // TODO: replace with quicksort
     public String toString() { return Arrays.toString(Arrays.copyOf(array, size)); }
 
     private void resize(int newCapacity) {
