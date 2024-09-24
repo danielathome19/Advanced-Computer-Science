@@ -15,9 +15,7 @@ public class SortingAlgorithms {
         // TODO
     }
 
-    public static <T extends Comparable<T>> void insertionSort(T[] arr) {
-        insertionSort(arr, arr.length);
-    }
+    public static <T extends Comparable<T>> void insertionSort(T[] arr) { insertionSort(arr, arr.length); }
     public static <T extends Comparable<T>> void insertionSort(T[] arr, int n) {
         for (int i = 1; i < n; i++) {
             T key = arr[i];
