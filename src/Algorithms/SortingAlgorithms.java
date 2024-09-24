@@ -2,7 +2,7 @@ package Algorithms;
 import java.util.Arrays;
 import java.util.Random;
 
-@SuppressWarnings({"unchecked", "unusued", "ManualArrayCopy"})
+@SuppressWarnings({"unchecked", "unused", "ManualArrayCopy"})
 public class SortingAlgorithms {
     private static <T extends Comparable<T>> void swap(T[] arr, int i, int j) {
         T temp = arr[i];
