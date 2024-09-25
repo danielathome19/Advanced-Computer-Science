@@ -4,7 +4,7 @@ import java.util.Iterator;
 import Algorithms.SearchAlgorithms;
 import Algorithms.SortingAlgorithms;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "rawtypes"})
 public class DynamicArray<T extends Comparable<T>> implements Iterable<T>, Comparable<DynamicArray<T>> {
     private T[] array;
     private int size;
@@ -41,6 +41,7 @@ public class DynamicArray<T extends Comparable<T>> implements Iterable<T>, Compa
     public void print() { System.out.println(Arrays.toString(Arrays.copyOf(array, size))); }
     public void sort() { SortingAlgorithms.insertionSort(array); }  // TODO: replace with quicksort
     public String toString() { return Arrays.toString(Arrays.copyOf(array, size)); }
+    public Comparable[] toArray() { return Arrays.copyOf(array, size); }
 
     private void resize(int newCapacity) {
         T[] newArray = (T[]) new Comparable[newCapacity];
