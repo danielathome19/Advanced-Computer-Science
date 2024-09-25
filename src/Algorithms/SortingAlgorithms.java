@@ -12,7 +12,10 @@ public class SortingAlgorithms {
 
 
     public static <T extends Comparable<T>> void bubbleSort(T[] arr) {
-        // TODO
+        for (int i = 0; i < arr.length-1; i++)
+            for (int j = 0; j < arr.length-i-1; j++)
+                if (arr[j].compareTo(arr[j+1]) > 0)
+                    swap(arr, j, j+1);
     }
 
     public static <T extends Comparable<T>> void insertionSort(T[] arr) { insertionSort(arr, arr.length); }
