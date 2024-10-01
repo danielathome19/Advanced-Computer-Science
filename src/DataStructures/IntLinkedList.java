@@ -35,8 +35,8 @@ public class IntLinkedList implements Iterable<Integer> {
     }
 
     public void insert(int data, int index) {
-        if (index < 1) return;
-        if (index == 1) {
+        if (index < 0) return;
+        if (index == 0) {
             addFront(data);
             return;
         }
