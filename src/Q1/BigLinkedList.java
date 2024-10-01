@@ -20,5 +20,10 @@ public class BigLinkedList {
         list.insert(100, 3);
         System.out.println("Is list empty: " + list.isEmpty());
         list.print();
+
+        var iter = list.iterator();
+        while (iter.hasNext())
+            System.out.print(iter.next() + " ");
+        System.out.println();
     }
 }

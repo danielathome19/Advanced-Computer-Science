@@ -1,6 +1,7 @@
 package DataStructures;
+import java.util.Iterator;
 
-public class IntLinkedList {
+public class IntLinkedList implements Iterable<Integer> {
     private class Node {
         int data;
         Node next;
@@ -75,6 +76,7 @@ public class IntLinkedList {
         System.out.println();
     }
 
+    // TODO: leave for students
     public boolean contains(int data) {
         Node current = head;
         while (current != null) {
@@ -84,6 +86,7 @@ public class IntLinkedList {
         return false;
     }
 
+    // TODO: leave for students
     public int size() {
         int count = 0;
         Node current = head;
@@ -94,5 +97,20 @@ public class IntLinkedList {
         return count;
     }
 
+    // TODO: leave for students
     public boolean isEmpty() { return head == null; }
+
+    public Iterator<Integer> iterator() {
+        return new Iterator<Integer>() {
+            private Node current = head;
+
+            public boolean hasNext() { return current != null; }
+
+            public Integer next() {
+                int data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
+    }
 }
