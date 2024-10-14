@@ -37,6 +37,20 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         size++;
     }
 
+    public void addFront(T element) {
+        var temp = new Node(element);
+        if (head != null) {
+            temp.next = head;
+            head.prev = temp;
+        }
+        head = temp;
+        size++;
+    }
+
+    public void insert(int index, T element) {
+        // TODO: the rest
+    }
+
     public void addSorted(T element) {
         // TODO: good luck :)
     }
