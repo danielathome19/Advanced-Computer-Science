@@ -1,6 +1,7 @@
 package Q1.Prog285b;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 import DataStructures.Stack;
 
@@ -26,7 +27,7 @@ public class Prog285bStack {
                 System.out.println(fred);
             }
         } catch (IOException e) {
-            System.out.println("Error: " + e.getStackTrace());
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
