@@ -115,6 +115,9 @@ public class Set<T extends Comparable<T>> implements Iterable<T> {
     public int size() { return size; }
     public boolean isEmpty() { return size == 0; }
     protected int getIndex(T key) { return (key.hashCode() & 0x7fffffff) % table.length; }  // Bitmask for +index
+    // In this case, the mask has all bits of a 32-bit integer set except the signed bit. 
+    // The signed bit is the bit that determines if the number is positive or negative. 
+    // ANDing (&) with this mask effectively sets the signed bit to 0, which means the number will always be positive.
 
     protected void resize(int newCapacity) {
         Entry<T>[] newTable = new Entry[newCapacity];

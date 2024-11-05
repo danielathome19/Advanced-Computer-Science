@@ -26,6 +26,7 @@ public class RBTreeLab {
         testTwo.insert(15);
         testTwo.insert(72);
         testTwo.printInOrder();
+        testTwo.display();
         System.out.println();
 
         RedBlackTree<String> testThree = new RedBlackTree<String>();
