@@ -18,6 +18,7 @@ public class SortingAlgorithms {
                     swap(arr, j, j+1);
     }
 
+
     public static <T extends Comparable<T>> void insertionSort(T[] arr) { insertionSort(arr, arr.length); }
     public static <T extends Comparable<T>> void insertionSort(T[] arr, int n) {
         for (int i = 1; i < n; i++) {
@@ -33,6 +34,11 @@ public class SortingAlgorithms {
 
 
     public static <T extends Comparable<T>> void selectionSort(T[] arr) {
+        // TODO
+    }
+
+
+    public static <T extends Comparable<T>> void shellSort(T[] arr) {
         // TODO
     }
 }
