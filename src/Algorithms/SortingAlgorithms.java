@@ -41,4 +41,45 @@ public class SortingAlgorithms {
     public static <T extends Comparable<T>> void shellSort(T[] arr) {
         // TODO
     }
+
+
+    /* ========== Merge Sort ========== */
+    public static <T extends Comparable<T>> void mergeSort(T[] arr) {
+        mergeSort(arr, 0, arr.length - 1);
+    }
+
+    public static <T extends Comparable<T>> void mergeSort(T[] arr, int l, int r) {
+        // TODO
+    }
+
+    public static <T extends Comparable<T>> void merge(T[] arr, int l, int m, int r) {
+        // TODO
+    }
+
+
+    /* ========== Quick Sort ========== */
+    public static <T extends Comparable<T>> void quickSort(T[] arr) {
+        quickSort(arr, 0, arr.length - 1);
+    }
+
+    public static <T extends Comparable<T>> void quickSort(T[] arr, int low, int high) {
+        if (low < high) {
+            int pivot = partition(arr, low, high);
+            quickSort(arr, low, pivot-1);
+            quickSort(arr, pivot+1, high);
+        }
+    }
+
+    public static <T extends Comparable<T>> int partition(T[] arr, int low, int high) {
+        T pivot = arr[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (arr[j].compareTo(pivot) <= 0) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, i+1, high);
+        return i + 1;
+    }
 }
