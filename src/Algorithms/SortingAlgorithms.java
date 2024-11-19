@@ -45,14 +45,10 @@ public class SortingAlgorithms {
 
     /* ========== Merge Sort ========== */
     public static <T extends Comparable<T>> void mergeSort(T[] arr) {
-        mergeSort(arr, 0, arr.length - 1);
+        // TODO (hint: use Arrays.copyOfRange to get an array slice)
     }
 
-    public static <T extends Comparable<T>> void mergeSort(T[] arr, int l, int r) {
-        // TODO
-    }
-
-    public static <T extends Comparable<T>> void merge(T[] arr, int l, int m, int r) {
+    public static <T extends Comparable<T>> void merge(T[] arr, T[] l, T[] r) {
         // TODO
     }
 
