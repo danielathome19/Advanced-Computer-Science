@@ -23,6 +23,7 @@ public class Prog285bBinaryTree {
             }
             file.close();
 
+            tree.delete(tree.getRootData());
             tree.printInOrder();
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
