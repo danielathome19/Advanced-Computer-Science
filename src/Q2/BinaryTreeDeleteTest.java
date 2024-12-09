@@ -10,5 +10,9 @@ public class BinaryTreeDeleteTest {
         System.out.println();
         tree.delete(5);
         tree.printInOrder();
+        System.out.println("Height: " + tree.height());
+        System.out.println("Width: " + tree.width());
+        tree.invert();
+        tree.printInOrder();
     }
 }
