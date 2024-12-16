@@ -126,4 +126,28 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return max;
     }
+
+    public void breadthFirstSearch() {
+        Queue<Node> queue = new Queue<>();
+        queue.enqueue(root);
+        while (!queue.isEmpty()) {
+            Node node = queue.dequeue();
+            System.out.print(node.data + " ");
+            if (node.left != null) queue.enqueue(node.left);
+            if (node.right != null) queue.enqueue(node.right);
+        }
+        System.out.println();
+    }
+
+    public void depthFirstSearch() {
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Node node = stack.pop();
+            System.out.print(node.data + " ");
+            if (node.right != null) stack.push(node.right);
+            if (node.left != null) stack.push(node.left);
+        }
+        System.out.println();
+    }
 }
