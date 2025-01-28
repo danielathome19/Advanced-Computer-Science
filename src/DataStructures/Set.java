@@ -39,7 +39,7 @@ public class Set<T extends Comparable<T>> implements Iterable<T> {
     }
 
     protected int getIndex(T key) { return (key.hashCode() & 0x7fffffff) % table.length; }
-    // Use bitmask to get a positive index (kinda like using math.abs)
+    // Use bitmask to get a positive index (kinda like using Math.abs)
 
     protected void resize(int newCapacity) {
         Entry<T>[] newTable = new Entry[newCapacity];
