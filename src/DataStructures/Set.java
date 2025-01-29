@@ -72,6 +72,24 @@ public class Set<T extends Comparable<T>> implements Iterable<T> {
         size++;
     }
 
+    public void remove(T key) {
+        int index = getIndex(key);
+        Entry<T> current = table[index];
+        Entry<T> previous = null;
+        while (current != null) {
+            if (current.key.equals(key)) {
+                if (previous == null)
+                    table[index] = current.next;
+                else
+                    previous.next = current.next;
+                size--;
+                return;
+            }
+            previous = current;
+            current = current.next;
+        }
+    }
+
     public boolean contains(T key) {
         Entry<T> current = table[getIndex(key)];
         while (current != null) {
@@ -84,4 +102,43 @@ public class Set<T extends Comparable<T>> implements Iterable<T> {
     public int size() { return size; }
     public boolean isEmpty() { return size == 0; }
 
+    // TODO: (optionally) `public Set<T> union(Set<T> other)`, `... intersection(...)`
+
+    public void enumerate() {
+        System.out.print("{ ");
+        for (Entry<T> entry : table) {
+            Entry<T> current = entry;
+            while (current != null) {
+                System.out.print(current.key + " ");
+                current = current.next;
+            }
+        }
+        System.out.println("}");
+    }
+
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
+            private int index = 0;
+            private Entry<T> current = null;
+
+            public boolean hasNext() {
+                if (current != null) return true;
+                while (index < table.length) {
+                    if (table[index] != null) {
+                        current = table[index++];
+                        return true;
+                    }
+                    index++;
+                }
+                return false;
+            }
+
+            public T next() {
+                if (!hasNext()) throw new NoSuchElementException();
+                T key = current.key;
+                current = current.next;
+                return key;
+            }
+        };
+    }
 }
