@@ -14,7 +14,7 @@ public class MultisetLab {
 
             while (file.hasNext()) {
                 String word = file.next().toLowerCase();
-                for (int i = 0; i < rnd.nextInt(1, 11); i++)
+                for (int i = 0; i < rnd.nextInt(1, 101); i++)
                     bag.insert(word);
             }
             file.close();
