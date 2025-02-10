@@ -29,6 +29,7 @@ public class Heap<T extends Comparable<T>> {
         if (size == 0) return null;
         T element = heap[0];
         heap[0] = heap[--size];
+        heap[size] = null;
         sink(0);
         if (size > 0 && size == capacity / 4)
             resize(capacity / 2);
