@@ -38,7 +38,7 @@ record Bunny(
 public class Prog1999t {
     public static void main(String[] args) {
         try {
-            var file = new Scanner(new File("Langdat/prog1999t.txt"));
+            var file = new Scanner(new File("Langdat/prog1999.txt"));
 
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
