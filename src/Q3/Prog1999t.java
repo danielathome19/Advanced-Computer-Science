@@ -40,6 +40,13 @@ public class Prog1999t {
         try {
             var file = new Scanner(new File("Langdat/prog1999.txt"));
 
+            int eelCount = file.nextInt();
+            var eels = new Eel[eelCount];
+            // TODO: read in eel stuff
+
+            var bunnies = new CircularLinkedList<Bunny>();
+            // TODO: read in bunny stuff
+
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
