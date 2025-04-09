@@ -7,6 +7,8 @@
 \usepackage{lipsum}
 \usepackage{hyperref}
 \usepackage{caption}
+\usepackage{natbib}
+% \usepackage{times}
 \geometry{left=0.5in, right=0.5in, top=1in, bottom=1in}
 
 
@@ -96,15 +98,25 @@ class Hello {
 \begin{figure}[h]  % here
     \centering
     \includegraphics[width=0.75\linewidth]{images/image.jpg}
-    \captionsetup{labelformat=empty}  % usepackage caption
+    % usepackage caption
+    % \captionsetup{labelformat=empty}
+    % \caption*{A thing}
     \caption{A thing}
+    \label{fig:house1}
 \end{figure}
 
+
 \includegraphics[width=2in]{images/image.jpg}
+
+Also see \textbf{Figure \ref{fig:house1}} or the
+\hyperref[sec:math]{Math Section}.
+
+You might want to click \href{http://test.com}{this link} or visit \url{http://test.com}.
 
 
 
 \section{Math}
+\label{sec:math}
 
 Inline math using \$ symbols: $\pi = 3.14159$
 
@@ -145,6 +157,30 @@ Block math:
 \end{small}
 
 
-% TODO: href, url, cite, citep, ref, label, bibliography, usepackage times, include, import, caption*
+
+% Place text from file exactly here
+\input{sections/section8}
+
+% Place text from file starting on its own page; good for chapters
+\include{sections/section8}
+
+
+
+\section{Lorem Ipsum}
+\lipsum[1-5]
+According to \cite{Goodfellow_Goodfellow_Wilson_Hunt_2010}, here's some additional text. Also something else \citep{Szelogowski_2022}.
+
+% \cite is for when the author name is part of the text
+% \citep puts the entire citation in ()s
+
+
+
+% bibcitation.com
+
+\pagebreak
+\bibliographystyle{apalike}  % Also see plain and plainnat
+\bibliography{references}
+
+
 
 \end{document}
