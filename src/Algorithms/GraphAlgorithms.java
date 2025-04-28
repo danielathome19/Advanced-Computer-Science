@@ -12,6 +12,7 @@ public class GraphAlgorithms {
     Dictionary<T, Integer> shortestPath(Graph<T> g, T start, T goal) {
         return shortestPath(g, start, goal, true);
     }
+
     /**
      * Dijkstra's Algorithm
      */
